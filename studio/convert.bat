@@ -8,7 +8,7 @@ del /q output\*.mp4
 set COUNT=0
 for %%F in (*.webm) do (
     set /a COUNT+=1
-    ffmpeg -i "%%F" -strict experimental -vsync 1 "output\video!COUNT!.mp4"
+    ffmpeg -i "%%F" -strict experimental -fps_mode cfr "output\video!COUNT!.mp4"
     echo file 'output\video!COUNT!.mp4' >> %FILELIST%
 )
 

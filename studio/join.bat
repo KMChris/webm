@@ -11,7 +11,7 @@ mkdir temp
 set COUNT=0
 for %%F in (*.webm) do (
     set /a COUNT+=1
-    ffmpeg -i "%%F" -strict experimental -vsync 1 "temp\video!COUNT!.mp4"
+    ffmpeg -i "%%F" -strict experimental -fps_mode cfr "temp\video!COUNT!.mp4"
     echo file 'temp\video!COUNT!.mp4' >> %FILELIST%
 )
 
